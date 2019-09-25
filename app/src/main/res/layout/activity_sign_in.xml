@@ -87,7 +87,8 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/txt_password"
             app:layout_constraintStart_toStartOf="@+id/txt_password"
-            app:layout_constraintTop_toBottomOf="@+id/txt_password" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_password"
+            android:onClick="signIn"/>
 
         <TextView
             android:id="@+id/sign_up"

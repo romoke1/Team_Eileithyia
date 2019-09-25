@@ -26,4 +26,8 @@ public class Sign_in extends AppCompatActivity {
         });
 
     }
+
+    public void signIn(View view) {
+        startActivity(new Intent(Sign_in.this,Chat_screen.class));
+    }
 }
