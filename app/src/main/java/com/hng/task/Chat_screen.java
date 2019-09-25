@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -66,7 +67,8 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
         switch (menuItem.getItemId()) {
 
             case R.id.my_profile: {
-
+                Intent intent = new Intent(Chat_screen.this, Profile.class);
+                startActivity(intent);
             }
 
             case R.id.log_out: {
