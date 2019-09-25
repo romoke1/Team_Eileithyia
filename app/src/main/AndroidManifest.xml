@@ -13,16 +13,17 @@
         <activity
             android:name=".Chat_screen"
             android:theme="@style/AppTheme.FullScreen">
+        </activity>
+        <activity android:name=".Sign_up" />
+        <activity
+            android:name=".Sign_in"
+            android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Sign_up" />
-        <activity
-            android:name=".Sign_in"
-            android:theme="@style/AppTheme.FullScreen"/>
         <activity
             android:name=".MainActivity">
 
