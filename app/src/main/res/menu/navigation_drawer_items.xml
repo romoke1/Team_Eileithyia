@@ -8,13 +8,11 @@
         <item
             android:id="@+id/my_profile"
             android:icon="@drawable/profile"
-            android:tint="@color/blue"
             android:title="My Profile"/>
 
         <item
             android:id="@+id/log_out"
             android:icon="@drawable/logout"
-            android:tint="@color/blue"
             android:title="Logout"/>
 
     </group>
