@@ -9,24 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Profile"></activity>
+        <activity
+            android:name=".Profile"
+            android:theme="@style/AppTheme.FullScreen"></activity>
         <activity
             android:name=".Chat_screen"
             android:theme="@style/AppTheme.FullScreen">
         </activity>
-        <activity android:name=".Sign_up" />
+        <activity
+            android:name=".Sign_up"
+            android:theme="@style/AppTheme.FullScreen"/>
         <activity
             android:name=".Sign_in"
+            android:theme="@style/AppTheme.FullScreen">
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity">
-
         </activity>
     </application>
 
