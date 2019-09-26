@@ -37,10 +37,12 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter<ChatRecyclerVi
 
         if(mChatMessage.getSender().equalsIgnoreCase("user")){
             holder.chatMessage.setText(mChatMessage.getMessage());
-            holder.botMessage.setVisibility(View.INVISIBLE);
+            holder.chatMessage.setVisibility(View.VISIBLE);
+            holder.botMessage.setVisibility(View.GONE);
         } else if(mChatMessage.getSender().equalsIgnoreCase("chatBot")){
             holder.botMessage.setText(mChatMessage.getMessage());
-            holder.chatMessage.setVisibility(View.INVISIBLE);
+            holder.botMessage.setVisibility(View.VISIBLE);
+            holder.chatMessage.setVisibility(View.GONE);
         }
     }
 
