@@ -6,40 +6,53 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Sign_in">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"
         android:textSize="42sp"
+        android:textStyle="bold"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_marginStart="30dp"
         android:textColor="#2f80ed">
     </TextView>
-    <Button
-        android:id="@+id/button"
-        android:layout_width="279dp"
+    <EditText
+        android:id="@+id/profileName"
+        android:layout_width="390dp"
         android:layout_height="59.24dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="23dp"
         android:layout_marginTop="49dp"
-        android:backgroundTint="#2f80ed"
-        android:hint="Name" />
+        android:hint="Name"
+        android:drawablePadding="16dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:background="@drawable/edit_text_bg"
+        android:inputType="textPersonName"/>
+    <EditText
+        android:id="@+id/profileContact"
+        android:layout_width="390dp"
+        android:layout_height="59.24dp"
+        android:layout_marginTop="29dp"
+        android:hint="Contact"
+        android:drawablePadding="16dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:background="@drawable/edit_text_bg"
+        android:inputType="phone"/>
 
-    <Button
-        android:layout_width="279dp"
+    <EditText
+        android:id="@+id/profileEmail"
+        android:layout_width="390dp"
         android:layout_height="59.24dp"
-        android:layout_marginTop="36.5dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="23dp"
-        android:backgroundTint="#2f80ed"
-        android:hint="Password" />
-    <Button
-        android:layout_width="279dp"
-        android:layout_height="59.24dp"
-        android:layout_marginTop="36.5dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="23dp"
-        android:backgroundTint="#2f80ed"
-        android:hint="Email Address" />
+        android:hint="Email Address"
+        android:drawablePadding="16dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_bg"
+        android:inputType="textEmailAddress"/>
+
+
+
 
 </LinearLayout>
