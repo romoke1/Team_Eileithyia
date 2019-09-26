@@ -17,8 +17,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.hng.task.models.ChatMessage;
 
 import java.util.ArrayList;
@@ -27,6 +29,9 @@ import java.util.List;
 public class Chat_screen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     private static final String TAG = "Chat Screen";
+
+    //firebase variables
+    private FirebaseAuth mAuth;
 
     //widgets
     private DrawerLayout mDrawerLayout;
@@ -44,6 +49,9 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_screen);
+
+        //init firebase
+        mAuth = FirebaseAuth.getInstance();
 
         //widgets
         txtMessage = findViewById(R.id.txt_message);
@@ -113,7 +121,13 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
             }
 
             case R.id.log_out: {
-
+                if(mAuth.getCurrentUser() != null){
+                    mAuth.signOut();
+                    Intent intent = new Intent(Chat_screen.this, Sign_in.class);
+                    Toast.makeText(Chat_screen.this, "Signed out", Toast.LENGTH_LONG).show();
+                    startActivity(intent);
+                    finish();
+                }
             }
 
         }
