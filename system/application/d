@@ -1,0 +1,1211 @@
+
+var baseURL = location.protocol + "//" + location.hostname + (location.port && ":" + location.port) + "/learn";
+
+
+var before="Christmas!"
+var current="Today is Christmas. Merry Christmas!"
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+function countdown(yr,m,d){
+    
+        theyear=yr;themonth=m;theday=d
+        var today=new Date()
+        var todayy=today.getYear()
+        if (todayy < 1000)
+        todayy+=1900
+        var todaym=today.getMonth()
+        var todayd=today.getDate()
+        var todayh=today.getHours()
+        var todaymin=today.getMinutes()
+        var todaysec=today.getSeconds()
+        var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
+        futurestring=montharray[m-1]+" "+d+", "+yr
+        dd=Date.parse(futurestring)-Date.parse(todaystring)
+        dday=Math.floor(dd/(60*60*1000*24)*1)
+        dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
+        dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
+        dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
+        if(dday==0&&dhour==0&&dmin==0&&dsec==1){
+        document.forms.count.count2.value=current
+        return
+        }
+        else
+        $('#showTimer').html("Class starts in "+dday+ " days, "+dhour+" hours, "+dmin+" minutes, and "+dsec+" Secs");
+        //document.getElementById("").innerHTML=
+        //document.forms.count.count2.value="Only "+dday+ " days, "+dhour+" hours, "+dmin+" minutes, and "+dsec+" seconds left until "+before
+        setTimeout("countdown(theyear,themonth,theday)",1000)
+    
+
+}
+
+function soso()
+{
+
+    var select1 = document.getElementById("pops");
+    var select2 = document.getElementById("popa");
+    select1.style.display = "inline";
+    var lgas = new Array();
+
+    var nw = select2.value;
+
+    /** Abia State **/
+    lgas[1] = new Array();
+    lgas[1][1] = 'Aba North';
+    lgas[1][2] = 'Aba South';
+    lgas[1][3] = 'Arochukwu';
+    lgas[1][4] = 'Bende';
+    lgas[1][5] = 'Ikwuano';
+    lgas[1][6] = 'Isiala Ngwa North';
+    lgas[1][7] = 'Isiala Ngwa South';
+    lgas[1][8] = 'Isuikwuato';
+    lgas[1][9] = 'Obi Ngwa';
+    lgas[1][10] = 'Ohafia';
+    lgas[1][11] = 'Osisioma';
+    lgas[1][12] = 'Ugwunagbo';
+    lgas[1][13] = 'Ukwa East';
+    lgas[1][14] = 'Ukwa West';
+    lgas[1][15] = 'Umuahia North';
+    lgas[1][16] = 'Umuahia South';
+    lgas[1][17] = 'Umu Nneochi';
+
+
+    /** Adamawa State **/
+    lgas[2] = new Array();
+    lgas[2][1] = 'Demsa';
+    lgas[2][2] = 'Fufure';
+    lgas[2][3] = 'Ganye';
+    lgas[2][4] = 'Gayuk';
+    lgas[2][5] = 'Gombi';
+    lgas[2][6] = 'Grie';
+    lgas[2][7] = 'Hong';
+    lgas[2][8] = 'Jada';
+    lgas[2][9] = 'Larmurde';
+    lgas[2][10] = 'Madagali';
+    lgas[2][11] = 'Maiha';
+    lgas[2][12] = 'Mayo Belwa';
+    lgas[2][13] = 'Michika';
+    lgas[2][14] = 'Mubi North';
+    lgas[2][15] = 'Mubi South';
+    lgas[2][16] = 'Numan';
+    lgas[2][17] = 'Shelleng';
+    lgas[2][18] = 'Song';
+    lgas[2][19] = 'Toungo';
+    lgas[2][20] = 'Yola North';
+    lgas[2][21] = 'Yola South';
+
+    /** Akwa Ibom State **/
+    lgas[3] = new Array();
+    lgas[3][1] = 'Abak';
+    lgas[3][2] = 'Eastern Obolo';
+    lgas[3][3] = 'Eket';
+    lgas[3][4] = 'Esit Eket';
+    lgas[3][5] = 'Essien Udim';
+    lgas[3][6] = 'Etim Ekpo';
+    lgas[3][7] = 'Etinan';
+    lgas[3][8] = 'Ibeno';
+    lgas[3][9] = 'Ibesikpo Asutan';
+    lgas[3][10] = 'Ibiono-Ibom';
+    lgas[3][11] = 'Ika';
+    lgas[3][12] = 'Ikono';
+    lgas[3][13] = 'Ikot Abasi';
+    lgas[3][14] = 'Ikot Ekpene';
+    lgas[3][15] = 'Ini';
+    lgas[3][16] = 'Itu';
+    lgas[3][17] = 'Mbo';
+    lgas[3][18] = 'Mkpat-Enin';
+    lgas[3][19] = 'Nsit-Atai';
+    lgas[3][20] = 'Nsit-Ibom';
+    lgas[3][21] = 'Nsit-Ubium';
+    lgas[3][22] = 'Obot Akara';
+    lgas[3][23] = 'Okobo';
+    lgas[3][24] = 'Onna';
+    lgas[3][25] = 'Oron';
+    lgas[3][26] = 'Oruk Anam';
+    lgas[3][27] = 'Udung-Uko';
+    lgas[3][28] = 'Ukanafun';
+    lgas[3][29] = 'Uruan';
+    lgas[3][30] = 'Urue-Offong/Oruko';
+    lgas[3][31] = 'Uyo';
+
+    /** Anambra State **/
+    lgas[4] = new Array();
+    lgas[4][1] = 'Aguata';
+    lgas[4][2] = 'Anambra East';
+    lgas[4][3] = 'Anambra West';
+    lgas[4][4] = 'Anaocha';
+    lgas[4][5] = 'Awka North';
+    lgas[4][6] = 'Awka South';
+    lgas[4][7] = 'Ayamelum';
+    lgas[4][8] = 'Dunukofia';
+    lgas[4][9] = 'Ekwusigo';
+    lgas[4][10] = 'Idemili-North';
+    lgas[4][11] = 'Idemili-South';
+    lgas[4][12] = 'Ihiala';
+    lgas[4][13] = 'Njikoka';
+    lgas[4][14] = 'Nnewi North';
+    lgas[4][15] = 'Nnewi South';
+    lgas[4][16] = 'Ogbaru';
+    lgas[4][17] = 'Onitsha North';
+    lgas[4][18] = 'Onitsha South';
+    lgas[4][19] = 'Orumba North';
+    lgas[4][20] = 'Orumba South';
+    lgas[4][21] = 'Oyi';
+
+
+    /** Bauchi State **/
+    lgas[5] = new Array();
+    lgas[5][1] = 'Alkaleri';
+    lgas[5][2] = 'Bauchi';
+    lgas[5][3] = 'Bogoro';
+    lgas[5][4] = 'Damban';
+    lgas[5][5] = 'Darazo';
+    lgas[5][6] = 'Dass';
+    lgas[5][7] = 'Gamawa';
+    lgas[5][8] = 'Ganjuma';
+    lgas[5][9] = 'Giade';
+    lgas[5][10] = 'Itas/Gadau';
+    lgas[5][11] = "Jama'are";
+    lgas[5][12] = 'Katagum';
+    lgas[5][13] = 'Kirfi';
+    lgas[5][14] = 'Misau';
+    lgas[5][15] = 'Ningi';
+    lgas[5][16] = 'Shira';
+    lgas[5][17] = 'Tafawa Balewa';
+    lgas[5][18] = 'Toro';
+    lgas[5][19] = 'Warji';
+    lgas[5][20] = 'Zaki';
+
+
+    /** Bayelsa State **/
+    lgas[6] = new Array();
+    lgas[6][1] = 'Brass';
+    lgas[6][2] = 'Ekeremor';
+    lgas[6][3] = 'Kolokuma/Opokuma';
+    lgas[6][4] = 'Nembe';
+    lgas[6][5] = 'Ogbia';
+    lgas[6][6] = 'Sagbama';
+    lgas[6][7] = 'Southern Ijaw';
+    lgas[6][8] = 'Yenagoa';
+
+    /** Benue State **/
+    lgas[7] = new Array();
+    lgas[7][1] = 'Agatu';
+    lgas[7][2] = 'Apa';
+    lgas[7][3] = 'Ado';
+    lgas[7][4] = 'Buruku';
+    lgas[7][5] = 'Gboko';
+    lgas[7][6] = 'Guma';
+    lgas[7][7] = 'Gwer East';
+    lgas[7][8] = 'Gwer West';
+    lgas[7][9] = 'Katsina-Ala';
+    lgas[7][10] = 'Konshisha';
+    lgas[7][11] = 'Kwande';
+    lgas[7][12] = 'Logo';
+    lgas[7][13] = 'Makurdi';
+    lgas[7][14] = 'Obi';
+    lgas[7][15] = 'Ogbadibo';
+    lgas[7][16] = 'Ohimini';
+    lgas[7][17] = 'Oju';
+    lgas[7][18] = 'Okpokwu';
+    lgas[7][19] = 'Oturkpo';
+    lgas[7][20] = 'Tarka';
+    lgas[7][21] = 'Ukum';
+    lgas[7][22] = 'Ushongo';
+    lgas[7][23] = 'Vandeikya';
+
+
+    /** Borno State **/
+    lgas[8] = new Array();
+    lgas[8][1] = 'Abadam';
+    lgas[8][2] = 'Askira/Uba';
+    lgas[8][3] = 'Bama';
+    lgas[8][4] = 'Bayo';
+    lgas[8][5] = 'Biu';
+    lgas[8][6] = 'Chibok';
+    lgas[8][7] = 'Damboa';
+    lgas[8][8] = 'Dikwa';
+    lgas[8][9] = 'Gubio';
+    lgas[8][10] = 'Guzamala';
+    lgas[8][11] = 'Gwoza';
+    lgas[8][12] = 'Hawul';
+    lgas[8][13] = 'Jere';
+    lgas[8][14] = 'Kaga';
+    lgas[8][15] = 'Kala/Balge';
+    lgas[8][16] = 'Konduga';
+    lgas[8][17] = 'Kukawa';
+    lgas[8][18] = 'Kwaya-Kusar';
+    lgas[8][19] = 'Mafa';
+    lgas[8][20] = 'Magumeri';
+    lgas[8][21] = 'Maiduguri';
+    lgas[8][22] = 'Marte';
+    lgas[8][23] = 'Mobbar';
+    lgas[8][24] = 'Monguno';
+    lgas[8][25] = 'Ngala';
+    lgas[8][26] = 'Nganzai';
+    lgas[8][27] = 'Shani';
+
+
+    /** Cross River State **/
+    lgas[9] = new Array();
+    lgas[9][1] = 'Abi';
+    lgas[9][2] = 'Akamkpa';
+    lgas[9][3] = 'Akpabuyo';
+    lgas[9][4] = 'Bakassi';
+    lgas[9][5] = 'Bekwarra';
+    lgas[9][6] = 'Biase';
+    lgas[9][7] = 'Boki';
+    lgas[9][8] = 'Calabar Municipal';
+    lgas[9][9] = 'Calabar South';
+    lgas[9][10] = 'Etung';
+    lgas[9][11] = 'Ikom';
+    lgas[9][12] = 'Obanliku';
+    lgas[9][13] = 'Obubra';
+    lgas[9][14] = 'Obudu';
+    lgas[9][15] = 'Odukpani';
+    lgas[9][16] = 'Ogoja';
+    lgas[9][17] = 'Yakuur';
+    lgas[9][18] = 'Yala';
+
+
+    /** Delta State **/
+    lgas[10] = new Array();
+    lgas[10][1] = 'Aniocha North';
+    lgas[10][2] = 'Aniocha South';
+    lgas[10][3] = 'Bomadi';
+    lgas[10][4] = 'Burutu';
+    lgas[10][5] = 'Ethiope East';
+    lgas[10][6] = 'Ethiope West';
+    lgas[10][7] = 'Ika North East';
+    lgas[10][8] = 'Ika South';
+    lgas[10][9] = 'Isoko North';
+    lgas[10][10] = 'Isoko South';
+    lgas[10][11] = 'Ndokwa East';
+    lgas[10][12] = 'Ndokwa West';
+    lgas[10][13] = 'Okpe';
+    lgas[10][14] = 'Oshimili North';
+    lgas[10][15] = 'Oshimili South';
+    lgas[10][16] = 'Patani';
+    lgas[10][17] = 'Sapele';
+    lgas[10][18] = 'Udu';
+    lgas[10][19] = 'Ughelli North';
+    lgas[10][20] = 'Ughelli South';
+    lgas[10][21] = 'Ukwuani';
+    lgas[10][22] = 'Uvwie';
+    lgas[10][23] = 'Warri North';
+    lgas[10][24] = 'Warri South';
+    lgas[10][25] = 'Warri South West';
+
+
+    /** Ebonyi State **/
+    lgas[11] = new Array();
+    lgas[11][1] = 'Abakaliki';
+    lgas[11][2] = 'Afikpo North';
+    lgas[11][3] = 'Afikpo South';
+    lgas[11][4] = 'Ebonyi';
+    lgas[11][5] = 'Ezza North';
+    lgas[11][6] = 'Ezza South';
+    lgas[11][7] = 'Ikwo';
+    lgas[11][8] = 'Ishielu';
+    lgas[11][9] = 'Ivo';
+    lgas[11][10] = 'Izzi';
+    lgas[11][11] = 'Ohaozara';
+    lgas[11][12] = 'Ohaukwu';
+    lgas[11][13] = 'Onicha';
+
+
+    /** Edo State **/
+    lgas[12] = new Array();
+    lgas[12][1] = 'Akoko-Edo';
+    lgas[12][2] = 'Egor';
+    lgas[12][3] = 'Esan Central';
+    lgas[12][4] = 'Esan North-East';
+    lgas[12][5] = 'Esan South-East';
+    lgas[12][6] = 'Etsako Central';
+    lgas[12][7] = 'Etsako East';
+    lgas[12][8] = 'Etsako West';
+    lgas[12][9] = 'Igueben';
+    lgas[12][10] = 'Ikpoba Okha';
+    lgas[12][11] = 'Orhionmwon';
+    lgas[12][12] = 'Oredo';
+    lgas[12][13] = 'Ovia North-East';
+    lgas[12][14] = 'Ovia South-West';
+    lgas[12][15] = 'Owan East';
+    lgas[12][16] = 'Owan West';
+    lgas[12][17] = 'Uhunmwonde';
+
+
+    /** Ekiti State **/
+    lgas[13] = new Array();
+    lgas[13][1] = 'Ado Ekiti';
+    lgas[13][2] = 'Efon';
+    lgas[13][3] = 'Ekiti East';
+    lgas[13][4] = 'East South-West';
+    lgas[13][5] = 'Ekiti West';
+    lgas[13][6] = 'Emure';
+    lgas[13][7] = 'Gbonyin';
+    lgas[13][8] = 'Ido Osi';
+    lgas[13][9] = 'Ijero';
+    lgas[13][10] = 'Ikere';
+    lgas[13][11] = 'Ikole';
+    lgas[13][12] = 'Ilejemeje';
+    lgas[13][13] = 'Irepodun/Ifelodun';
+    lgas[13][14] = 'Ise/Orun';
+    lgas[13][15] = 'Moba';
+    lgas[13][16] = 'Oye';
+
+
+
+    /** Enugu State **/
+    lgas[14] = new Array();
+    lgas[14][1] = 'Aninri';
+    lgas[14][2] = 'Awgu';
+    lgas[14][3] = 'Enugu East';
+    lgas[14][4] = 'Enugu North';
+    lgas[14][5] = 'Enugu South';
+    lgas[14][6] = 'Ezeagu';
+    lgas[14][7] = 'Igbo Etiti';
+    lgas[14][8] = 'Igbo Eze North';
+    lgas[14][9] = 'Igbo Eze South';
+    lgas[14][10] = 'Isi Uzo';
+    lgas[14][11] = 'Nkanu East';
+    lgas[14][12] = 'Nkanu West';
+    lgas[14][13] = 'Nsukka';
+    lgas[14][14] = 'Oji River';
+    lgas[14][15] = 'Udenu';
+    lgas[14][16] = 'Udi';
+    lgas[14][17] = 'Uzo Uwani';
+
+
+    /** FCT **/
+    lgas[15] = new Array();
+    lgas[15][1] = 'Abaji';
+    lgas[15][2] = 'Bwari';
+    lgas[15][3] = 'Gwagwalada';
+    lgas[15][4] = 'Kuje';
+    lgas[15][5] = 'Kwali';
+    lgas[15][6] = 'Municipal Area Council';
+
+
+    /** Gombe State **/
+    lgas[16] = new Array();
+    lgas[16][1] = 'Akko';
+    lgas[16][2] = 'Balanga';
+    lgas[16][3] = 'Billiri';
+    lgas[16][4] = 'Dukku';
+    lgas[16][5] = 'Funakaye';
+    lgas[16][6] = 'Gombe';
+    lgas[16][7] = 'Kaltungo';
+    lgas[16][8] = 'Kwami';
+    lgas[16][9] = 'Nafada';
+    lgas[16][10] = 'Shongom';
+    lgas[16][11] = 'Yamaltu/Deba';
+
+
+    /** Imo State **/
+    lgas[17] = new Array();
+    lgas[17][1] = 'Aboh Mbaise';
+    lgas[17][2] = 'Ahiazu Mbaise';
+    lgas[17][3] = 'Ehime Mbano';
+    lgas[17][4] = 'Ezinihitte';
+    lgas[17][5] = 'Ideato North';
+    lgas[17][6] = 'Ideato South';
+    lgas[17][7] = 'Ihitte/Uboma';
+    lgas[17][8] = 'Ikeduru';
+    lgas[17][9] = 'Isiala Mbano';
+    lgas[17][10] = 'Isu';
+    lgas[17][11] = 'Mbaitoli';
+    lgas[17][12] = 'Ngor Okpala';
+    lgas[17][13] = 'Njaba';
+    lgas[17][14] = 'Nkwerre';
+    lgas[17][15] = 'Nwangele';
+    lgas[17][16] = 'Obowo';
+    lgas[17][17] = 'Oguta';
+    lgas[17][18] = 'Ohaji/Egbema';
+    lgas[17][19] = 'Okigwe';
+    lgas[17][20] = 'Orlu';
+    lgas[17][21] = 'Ursu';
+    lgas[17][22] = 'Uru East';
+    lgas[17][23] = 'Oru West';
+    lgas[17][24] = 'Owerri Municipal';
+    lgas[17][25] = 'Owerri North';
+    lgas[17][26] = 'Owerri West';
+    lgas[17][27] = 'Unuimo';
+
+
+    /** Jigawa State **/
+    lgas[18] = new Array();
+    lgas[18][1] = 'Auyo';
+    lgas[18][2] = 'Babura';
+    lgas[18][3] = 'Biriniwa';
+    lgas[18][4] = 'Birnin Kudu';
+    lgas[18][5] = 'Buji';
+    lgas[18][6] = 'Dutse';
+    lgas[18][7] = 'Gagarawa';
+    lgas[18][8] = 'Garki';
+    lgas[18][9] = 'Gumel';
+    lgas[18][10] = 'Guri';
+    lgas[18][11] = 'Gwaram';
+    lgas[18][12] = 'Gwiwa';
+    lgas[18][13] = 'Hadejia';
+    lgas[18][14] = 'Jahun';
+    lgas[18][15] = 'Kafin Hausa';
+    lgas[18][16] = 'Kazaure';
+    lgas[18][17] = 'Kiri Kasama';
+    lgas[18][18] = 'Kiyawa';
+    lgas[18][19] = 'Kaugama';
+    lgas[18][20] = 'Maigatari';
+    lgas[18][21] = 'Malam Madori';
+    lgas[18][22] = 'Miga';
+    lgas[18][23] = 'Ringim';
+    lgas[18][24] = 'Roni';
+    lgas[18][25] = 'Sule Tankarkar';
+    lgas[18][26] = 'Taura';
+    lgas[18][27] = 'Yankwashi';
+
+
+    /** Kaduna State **/
+    lgas[19] = new Array();
+    lgas[19][1] = 'Birnin Gwari';
+    lgas[19][2] = 'Chikun';
+    lgas[19][3] = 'Giwa';
+    lgas[19][4] = 'Igabi';
+    lgas[19][5] = 'Ikara';
+    lgas[19][6] = 'Jaba';
+    lgas[19][7] = "Jema'a";
+    lgas[19][8] = 'Kachia';
+    lgas[19][9] = 'Kaduna North';
+    lgas[19][10] = 'Kaduna South';
+    lgas[19][11] = 'Kagarko';
+    lgas[19][12] = 'Kajuru';
+    lgas[19][13] = 'Kaura';
+    lgas[19][14] = 'Kauru';
+    lgas[19][15] = 'Kubau';
+    lgas[19][16] = 'Kudan';
+    lgas[19][17] = 'Lere';
+    lgas[19][18] = 'Makarfi';
+    lgas[19][19] = 'Sabon Gari';
+    lgas[19][20] = 'Sanga';
+    lgas[19][21] = 'Soba';
+    lgas[19][22] = 'Zangon Kataf';
+    lgas[19][23] = 'Zaria';
+
+
+    /** Kano State **/
+    lgas[20] = new Array();
+    lgas[20][1] = 'Ajingi';
+    lgas[20][2] = 'Albasu';
+    lgas[20][3] = 'Bagwai';
+    lgas[20][4] = 'Bebeji';
+    lgas[20][5] = 'Bichi';
+    lgas[20][6] = 'Bunkure';
+    lgas[20][7] = 'Dala';
+    lgas[20][8] = 'Dambatta';
+    lgas[20][9] = 'Dawakin Kudu';
+    lgas[20][10] = 'Dawakin Tofa';
+    lgas[20][11] = 'Doguwa';
+    lgas[20][12] = 'Fagge';
+    lgas[20][13] = 'Gabasawa';
+    lgas[20][14] = 'Garko';
+    lgas[20][15] = 'Garun Mallam';
+    lgas[20][16] = 'Gaya';
+    lgas[20][17] = 'Gezawa';
+    lgas[20][18] = 'Gwale';
+    lgas[20][19] = 'Gwarzo';
+    lgas[20][20] = 'Kabo';
+    lgas[20][21] = 'Kano Municipal';
+    lgas[20][22] = 'Karaye';
+    lgas[20][23] = 'Kibiya';
+    lgas[20][24] = 'Kiru';
+    lgas[20][25] = 'Kumbotso';
+    lgas[20][26] = 'Kunchi';
+    lgas[20][27] = 'Kura';
+    lgas[20][28] = 'Madobi';
+    lgas[20][29] = 'Makoda';
+    lgas[20][30] = 'Minjibir';
+    lgas[20][31] = 'Nasarawa';
+    lgas[20][32] = 'Rano';
+    lgas[20][33] = 'Rimin Gado';
+    lgas[20][34] = 'Rogo';
+    lgas[20][35] = 'Shanono';
+    lgas[20][36] = 'Sumaila';
+    lgas[20][37] = 'Takai';
+    lgas[20][38] = 'Tarauni';
+    lgas[20][39] = 'Tofa';
+    lgas[20][40] = 'Tsanyawa';
+    lgas[20][41] = 'Tudun Wada';
+    lgas[20][42] = 'Ungogo';
+    lgas[20][43] = 'Warawa';
+    lgas[20][44] = 'Wudil';
+
+
+    /** Katsina State **/
+    lgas[21] = new Array();
+    lgas[21][1] = 'Bakori';
+    lgas[21][2] = 'Batagarawa';
+    lgas[21][3] = 'Batsari';
+    lgas[21][4] = 'Baure';
+    lgas[21][5] = 'Bindawa';
+    lgas[21][6] = 'Charanchi';
+    lgas[21][7] = 'Dandume';
+    lgas[21][8] = 'Danja';
+    lgas[21][9] = 'Dan Musa';
+    lgas[21][10] = 'Daura';
+    lgas[21][11] = 'Dutsi';
+    lgas[21][12] = 'Dutsin Ma';
+    lgas[21][13] = 'Faskari';
+    lgas[21][14] = 'Funtua';
+    lgas[21][15] = 'Ingawa';
+    lgas[21][16] = 'Jibia';
+    lgas[21][17] = 'Kafur';
+    lgas[21][18] = 'Kaita';
+    lgas[21][19] = 'Kankara';
+    lgas[21][20] = 'Kankia';
+    lgas[21][21] = 'Katsina';
+    lgas[21][22] = 'Kurfi';
+    lgas[21][23] = 'Kusada';
+    lgas[21][24] = "Mai'Adua";
+    lgas[21][25] = 'Malumfashi';
+    lgas[21][26] = 'Mani';
+    lgas[21][27] = 'Mashi';
+    lgas[21][28] = 'Matazu';
+    lgas[21][29] = 'Musawa';
+    lgas[21][30] = 'Rimi';
+    lgas[21][31] = 'Sabuwa';
+    lgas[21][32] = 'Safana';
+    lgas[21][33] = 'Sandamu';
+    lgas[21][34] = 'Zango';
+
+
+    /** Kebbi State **/
+    lgas[22] = new Array();
+    lgas[22][1] = 'Aleiro';
+    lgas[22][2] = 'Arewa Dandi';
+    lgas[22][3] = 'Argungu';
+    lgas[22][4] = 'Augie';
+    lgas[22][5] = 'Bagudo';
+    lgas[22][6] = 'Birnin Kebbi';
+    lgas[22][7] = 'Bunza';
+    lgas[22][8] = 'Dandi';
+    lgas[22][9] = 'Fakai';
+    lgas[22][10] = 'Gwandu';
+    lgas[22][11] = 'Jega';
+    lgas[22][12] = 'Kalgo';
+    lgas[22][13] = 'Koko/Besse';
+    lgas[22][14] = 'Maiyama';
+    lgas[22][15] = 'Ngaski';
+    lgas[22][16] = 'Sakaba';
+    lgas[22][17] = 'Shanga';
+    lgas[22][18] = 'Suru';
+    lgas[22][19] = 'Wasagu/Danko';
+    lgas[22][20] = 'Yauri';
+    lgas[22][21] = 'Zuru';
+
+
+    /** Kogi State **/
+    lgas[23] = new Array();
+    lgas[23][1] = 'Adavi';
+    lgas[23][2] = 'Ajaokuta';
+    lgas[23][3] = 'Ankpa';
+    lgas[23][4] = 'Bassa';
+    lgas[23][5] = 'Dekina';
+    lgas[23][6] = 'Ibaji';
+    lgas[23][7] = 'Idah';
+    lgas[23][8] = 'Igalamela Odolu';
+    lgas[23][9] = 'Ijumu';
+    lgas[23][10] = 'Kabba/Bunu';
+    lgas[23][11] = 'Kogi';
+    lgas[23][12] = 'Lokoja';
+    lgas[23][13] = 'Mopa Muro';
+    lgas[23][14] = 'Ofu';
+    lgas[23][15] = 'Ogori/Magongo';
+    lgas[23][16] = 'Okehi';
+    lgas[23][17] = 'Okene';
+    lgas[23][18] = 'Olamaboro';
+    lgas[23][19] = 'Omala';
+    lgas[23][20] = 'Yagba East';
+    lgas[23][21] = 'Yagba West';
+
+    /** Kwara State **/
+    lgas[24] = new Array();
+    lgas[24][1] = 'Asa';
+    lgas[24][2] = 'Baruten';
+    lgas[24][3] = 'Edu';
+    lgas[24][4] = 'Ekiti';
+    lgas[24][5] = 'Ifelodun';
+    lgas[24][6] = 'Ilorin East';
+    lgas[24][7] = 'Ilorin South';
+    lgas[24][8] = 'Ilorin West';
+    lgas[24][9] = 'Irepodun';
+    lgas[24][10] = 'Isin';
+    lgas[24][11] = 'Kaiama';
+    lgas[24][12] = 'Moro';
+    lgas[24][13] = 'Offa';
+    lgas[24][14] = 'Oke Ero';
+    lgas[24][15] = 'Oyun';
+    lgas[24][16] = 'Pategi';
+
+
+    /** Lagos State **/
+    lgas[25] = new Array();
+    lgas[25][1] = 'Agege';
+    lgas[25][2] = 'Ajeromi-Ifelodun';
+    lgas[25][3] = 'Alimosho';
+    lgas[25][4] = 'Amuwo-Odofin';
+    lgas[25][5] = 'Apapa';
+    lgas[25][6] = 'Badagry';
+    lgas[25][7] = 'Epe';
+    lgas[25][8] = 'Eti Osa';
+    lgas[25][9] = 'Ibeju-Lekki';
+    lgas[25][10] = 'Ifako-Ijaiye';
+    lgas[25][11] = 'Ikeja';
+    lgas[25][12] = 'Ikorodu';
+    lgas[25][13] = 'Kosofe';
+    lgas[25][14] = 'Lagos Island';
+    lgas[25][15] = 'Lagos Mainland';
+    lgas[25][16] = 'Mushin';
+    lgas[25][17] = 'Ojo';
+    lgas[25][18] = 'Oshodi-Isolo';
+    lgas[25][19] = 'Shomolu';
+    lgas[25][20] = 'Surulere';
+
+
+    /** Nasarawa State **/
+    lgas[26] = new Array();
+    lgas[26][1] = 'Akwanga';
+    lgas[26][2] = 'Awe';
+    lgas[26][3] = 'Doma';
+    lgas[26][4] = 'Karu';
+    lgas[26][5] = 'Keana';
+    lgas[26][6] = 'Keffi';
+    lgas[26][7] = 'Kokona';
+    lgas[26][8] = 'Lafia';
+    lgas[26][9] = 'Nasarawa';
+    lgas[26][10] = 'Nasarawa Egon';
+    lgas[26][11] = 'Obi';
+    lgas[26][12] = 'Toto';
+    lgas[26][13] = 'Wamba';
+
+    /** Niger State **/
+    lgas[27] = new Array();
+    lgas[27][1] = 'Agaie';
+    lgas[27][2] = 'Agwara';
+    lgas[27][3] = 'Bida';
+    lgas[27][4] = 'Borgu';
+    lgas[27][5] = 'Bosso';
+    lgas[27][6] = 'Chanchaga';
+    lgas[27][7] = 'Edati';
+    lgas[27][8] = 'Gbako';
+    lgas[27][9] = 'Gurara';
+    lgas[27][10] = 'Katcha';
+    lgas[27][11] = 'Kontagora';
+    lgas[27][12] = 'Lapai';
+    lgas[27][13] = 'Lavun';
+    lgas[27][14] = 'Magama';
+    lgas[27][15] = 'Mariga';
+    lgas[27][16] = 'Mashegu';
+    lgas[27][17] = 'Mokwa';
+    lgas[27][18] = 'Moya';
+    lgas[27][19] = 'Paikoro';
+    lgas[27][20] = 'Rafi';
+    lgas[27][21] = 'Rijau';
+    lgas[27][22] = 'Shiroro';
+    lgas[27][23] = 'Suleja';
+    lgas[27][24] = "Tafa";
+    lgas[27][25] = "Wushishi";
+
+    /** Ogun State **/
+    lgas[28] = new Array();
+    lgas[28][1] = 'Abeokuta North';
+    lgas[28][2] = 'Abeokuta South';
+    lgas[28][3] = 'Ado-Odo/Ota';
+    lgas[28][4] = 'Egbado North';
+    lgas[28][5] = 'Egbado South';
+    lgas[28][6] = 'Ewekoro';
+    lgas[28][7] = 'Ifo';
+    lgas[28][8] = 'Ijebu East';
+    lgas[28][9] = 'Ijebu North';
+    lgas[28][10] = 'Ijebu North East';
+    lgas[28][11] = 'Ijebu Ode';
+    lgas[28][12] = 'Ikenne';
+    lgas[28][13] = 'Imeko Afon';
+    lgas[28][14] = 'Ipokia';
+    lgas[28][15] = 'Obafemi Owode';
+    lgas[28][16] = 'Odeda';
+    lgas[28][17] = 'Odogbolu';
+    lgas[28][18] = 'Ogun Waterside';
+    lgas[28][19] = 'Remo North';
+    lgas[28][20] = 'Shagamu';
+
+    /** Ondo State **/
+    lgas[29] = new Array();
+    lgas[29][1] = 'Akoko North-East';
+    lgas[29][2] = 'Akoko North-West';
+    lgas[29][3] = 'Akoko South-West';
+    lgas[29][4] = 'Akoko South-East';
+    lgas[29][5] = 'Akure North';
+    lgas[29][6] = 'Akure South';
+    lgas[29][7] = 'Ese Odo';
+    lgas[29][8] = 'Idanre';
+    lgas[29][9] = 'Ifedore';
+    lgas[29][10] = 'Ilaje';
+    lgas[29][11] = 'Ile Oluji/Okeigbo';
+    lgas[29][12] = 'Irele';
+    lgas[29][13] = 'Odigbo';
+    lgas[29][14] = 'Okitipupa';
+    lgas[29][15] = 'Ondo East';
+    lgas[29][16] = 'Ondo West';
+    lgas[29][17] = 'Ose';
+    lgas[29][18] = 'Owo';
+
+
+    /** Osun State **/
+    lgas[30] = new Array();
+    lgas[30][1] = 'Atakunmosa East';
+    lgas[30][2] = 'Atakunmosa West';
+    lgas[30][3] = 'Aiyedaade';
+    lgas[30][4] = 'Aiyedire';
+    lgas[30][5] = 'Boluwaduro';
+    lgas[30][6] = 'Boripe';
+    lgas[30][7] = 'Ede North';
+    lgas[30][8] = 'Ede South';
+    lgas[30][9] = 'Ife Central';
+    lgas[30][10] = 'Ife East';
+    lgas[30][11] = 'Ife North';
+    lgas[30][12] = 'Ife South';
+    lgas[30][13] = 'Egbedore';
+    lgas[30][14] = 'Ejigbo';
+    lgas[30][15] = 'Ifedayo';
+    lgas[30][16] = 'Ifelodun';
+    lgas[30][17] = 'Ila';
+    lgas[30][18] = 'Ilesa East';
+    lgas[30][19] = 'Ilesa West';
+    lgas[30][20] = 'Irepodun';
+    lgas[30][21] = 'Irewole';
+    lgas[30][22] = 'Isokan';
+    lgas[30][23] = 'Iwo';
+    lgas[30][24] = 'Obokun';
+    lgas[30][25] = 'Odo Otin';
+    lgas[30][26] = 'Ola Oluwa';
+    lgas[30][27] = 'Olorunda';
+    lgas[30][28] = 'Oriade';
+    lgas[30][29] = 'Orolu';
+    lgas[30][30] = 'Osogbo';
+
+
+    /** Oyo State **/
+    lgas[31] = new Array();
+    lgas[31][1] = 'Afijio';
+    lgas[31][2] = 'Akinyele';
+    lgas[31][3] = 'Atiba';
+    lgas[31][4] = 'Atisbo';
+    lgas[31][5] = 'Egbeda';
+    lgas[31][6] = 'Ibadan North';
+    lgas[31][7] = 'Ibadan North-East';
+    lgas[31][8] = 'Ibadan North-West';
+    lgas[31][9] = 'Ibadan South-East';
+    lgas[31][10] = 'Ibadan South-West';
+    lgas[31][11] = 'Ibarapa Central';
+    lgas[31][12] = 'Ibarapa East';
+    lgas[31][13] = 'Ibarapa North';
+    lgas[31][14] = 'Ido';
+    lgas[31][15] = 'Irepo';
+    lgas[31][16] = 'Iseyin';
+    lgas[31][17] = 'Itesiwaju';
+    lgas[31][18] = 'Iwajowa';
+    lgas[31][19] = 'Kajola';
+    lgas[31][20] = 'Lagelu';
+    lgas[31][21] = 'Ogbomosho North';
+    lgas[31][22] = 'Ogbomosho South';
+    lgas[31][23] = 'Ogo Oluwa';
+    lgas[31][24] = 'Olorunsogo';
+    lgas[31][25] = 'Oluyole';
+    lgas[31][26] = 'Ona Ara';
+    lgas[31][27] = 'Orelope';
+    lgas[31][28] = 'Ori Ire';
+    lgas[31][29] = 'Oyo';
+    lgas[31][30] = 'Oyo East';
+    lgas[31][31] = 'Saki East';
+    lgas[31][32] = 'Saki West';
+    lgas[31][33] = 'Surulere';
+
+
+    /** Plateau State **/
+    lgas[32] = new Array();
+    lgas[32][1] = 'Bokkos';
+    lgas[32][2] = 'Barkin Ladi';
+    lgas[32][3] = 'Bassa';
+    lgas[32][4] = 'Jos East';
+    lgas[32][5] = 'Jos North';
+    lgas[32][6] = 'Jos South';
+    lgas[32][7] = 'Kanam';
+    lgas[32][8] = 'Kanke';
+    lgas[32][9] = 'Langtang South';
+    lgas[32][10] = 'Langtang North';
+    lgas[32][11] = 'Mangu';
+    lgas[32][12] = 'Mikang';
+    lgas[32][13] = 'Pankshin';
+    lgas[32][14] = "Qua'an Pan";
+    lgas[32][15] = 'Riyom';
+    lgas[32][16] = 'Shendam';
+    lgas[32][17] = 'Wase';
+
+
+    /** Rivers State **/
+    lgas[33] = new Array();
+    lgas[33][1] = 'Abua/Odual';
+    lgas[33][2] = 'Ahoada East';
+    lgas[33][3] = 'Ahoada West';
+    lgas[33][4] = 'Akuku-Toru';
+    lgas[33][5] = 'Andoni';
+    lgas[33][6] = 'Asari-Toru';
+    lgas[33][7] = 'Bonny';
+    lgas[33][8] = 'Degema';
+    lgas[33][9] = 'Eleme';
+    lgas[33][10] = 'Emuoha';
+    lgas[33][11] = 'Etche';
+    lgas[33][12] = 'Gokana';
+    lgas[33][13] = 'Ikwerre';
+    lgas[33][14] = 'Khana';
+    lgas[33][15] = 'Obio/Akpor';
+    lgas[33][16] = 'Ogba/Egbema/Ndoni';
+    lgas[33][17] = 'Ogu/Bolo';
+    lgas[33][18] = 'Okrika';
+    lgas[33][19] = 'Omuma';
+    lgas[33][20] = 'Opobo/Nkoro';
+    lgas[33][21] = 'Oyigbo';
+    lgas[33][22] = 'Port Harcourt';
+    lgas[33][23] = 'Tai';
+
+
+    /** Sokoto State **/
+    lgas[34] = new Array();
+    lgas[34][1] = 'Binji';
+    lgas[34][2] = 'Bodinga';
+    lgas[34][3] = 'Dange Shuni';
+    lgas[34][4] = 'Gada';
+    lgas[34][5] = 'Goronyo';
+    lgas[34][6] = 'Gudu';
+    lgas[34][7] = 'Gwadabawa';
+    lgas[34][8] = 'Illela';
+    lgas[34][9] = 'Isa';
+    lgas[34][10] = 'Kebbe';
+    lgas[34][11] = 'Kware';
+    lgas[34][12] = 'Rabah';
+    lgas[34][13] = 'Sabon Birni';
+    lgas[34][14] = 'Shagari';
+    lgas[34][15] = 'Sokoto North';
+    lgas[34][16] = 'Sokoto South';
+    lgas[34][17] = 'Tambuwal';
+    lgas[34][18] = 'Tangaza';
+    lgas[34][19] = 'Tureta';
+    lgas[34][20] = 'Wamako';
+    lgas[34][21] = 'Wurno';
+    lgas[34][22] = 'Yabo';
+
+
+    /** Taraba State **/
+    lgas[35] = new Array();
+    lgas[35][1] = 'Ardo Kola';
+    lgas[35][2] = 'Bali';
+    lgas[35][3] = 'Donga';
+    lgas[35][4] = 'Gashaka';
+    lgas[35][5] = 'Gassol';
+    lgas[35][6] = 'Ibi';
+    lgas[35][7] = 'Jalingo';
+    lgas[35][8] = 'Karim Lamido';
+    lgas[35][9] = 'Kumi';
+    lgas[35][10] = 'Lau';
+    lgas[35][11] = 'Sardauna';
+    lgas[35][12] = 'Takum';
+    lgas[35][13] = 'Ussa';
+    lgas[35][14] = 'Wukari';
+    lgas[35][15] = 'Yorro';
+    lgas[35][16] = 'Zing';
+
+
+    /** Yobe State **/
+    lgas[36] = new Array();
+    lgas[36][1] = 'Bade';
+    lgas[36][2] = 'Bursari';
+    lgas[36][3] = 'Damaturu';
+    lgas[36][4] = 'Fika';
+    lgas[36][5] = 'Fune';
+    lgas[36][6] = 'Geidam';
+    lgas[36][7] = 'Gujba';
+    lgas[36][8] = 'Gulani';
+    lgas[36][9] = 'Jakusko';
+    lgas[36][10] = 'Karasuwa';
+    lgas[36][11] = 'Machina';
+    lgas[36][12] = 'Nangere';
+    lgas[36][13] = 'Nguru';
+    lgas[36][14] = 'Potiskum';
+    lgas[36][15] = 'Tarmuwa';
+    lgas[36][16] = 'Yunusari';
+    lgas[36][17] = 'Yusufari';
+
+
+    /** Zamfara State **/
+    lgas[37] = new Array();
+    lgas[37][1] = 'Anka';
+    lgas[37][2] = 'Bakura';
+    lgas[37][3] = 'Birnin Magaji/Kiyaw';
+    lgas[37][4] = 'Bukkuyum';
+    lgas[37][5] = 'Bungudu';
+    lgas[37][6] = 'Gummi';
+    lgas[37][7] = 'Gusau';
+    lgas[37][8] = 'Kaura Namoda';
+    lgas[37][9] = 'Maradun';
+    lgas[37][10] = 'Maru';
+    lgas[37][11] = 'Shinkafi';
+    lgas[37][12] = 'Talata Mafara';
+    lgas[37][13] = 'Chafe';
+    lgas[37][14] = 'Zurmi';
+
+
+    select1.options.length = 0;
+    for (var i = 1; i < lgas[nw].length; i++) {
+        var opt = lgas[nw][i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select1.appendChild(el);
+    }
+}
+
+function pay_online()
+    {
+       document.getElementById("forma").submit();
+    }
+
+function changeLevel()
+{
+    var lev = $("#ddlLevel").val();
+    document.location.href = baseURL + '/courses/change_level/' + lev;
+}
+
+function delete_course(s, m)
+{
+    if (confirm('Click OK if you really want to remove ' + m + ' from the courses you teach')) {
+        document.location.href = baseURL + '/teacher/delete_course/' + s;
+    }
+}
+
+function delete_my_class(s, m)
+{
+    if (confirm('Click OK if you really want to delete ' + m + ' class')) {
+        document.location.href = baseURL + '/users/delete_my_class/' + s;
+    }
+}
+
+function delete_post(s)
+{
+    if (confirm('Click OK if you really want to delete this post')) {
+        document.location.href = baseURL + '/forums/del/' + s;
+    }
+}
+
+
+
+function course_name()
+{
+    //var course = $("#ddlCourse").val();
+    //$("#hdCourse").val(amy);
+}
+
+function add_course()
+{
+    var course = $("#ddlCourse").val();
+    if (course != "")
+    {
+        if (course === "no")
+        {
+            alert('Sorry, you cant add this Course. It already exists in your Course list');
+        } else {
+            if (confirm('Click OK if you really want to add this course to the courses you teach')) {
+                document.location.href = baseURL + '/teacher/add_course/' + course;
+            }
+        }
+    }
+
+}
+
+function new_course()
+{
+    $('#courseRow').slideUp(1000);
+    $('#newestRow').slideUp(1000);
+    $('#newCourseRow').show();
+    $('#newCourseDetailsRow').show();
+    document.getElementById("newBtn").innerHTML = '<input type="submit" value="Add New Course" class="button_subscribe_green" name="btnSub"/>';
+}
+
+function processMyReq() {
+
+    $.post("sam.php", {},
+            function(output) {
+                //if (XMLHttpRequest.readyState == 4 && XMLHttpRequest.status == 200) {
+                alert('dd');
+
+
+                //}
+            });
+}
+
+function fetchCategories() {
+
+    $('#ddlCategoriesView').html("<div class='col-md-8 col-sm-8' style='text-align:center'><img src='../assets/img/loading2.gif' width='40' /></div>");
+    var level = $("#ddlLevel").val();
+    $.post(baseURL + '/index.php/courses/fetchCategories/' + level, {},
+            function(output) {
+                $('#ddlCategoriesView').html(output).fadeIn(1000);
+            });
+}
+
+function fetchCourses() {
+    
+    $('#courseRow').html("<div class='col-md-12' style='text-align:center'><img src='../assets/img/loading2.gif' width='40' /></div>");
+    var cat = $("#ddlCategories").val();
+    $.post(baseURL + '/index.php/courses/fetchCourses/' + cat, {},
+            function(output) {
+                $('#courseRow').html(output).slideDown(1000);
+            });
+     var v2 = '<p>Can\'t find the course you want to teach in the category selected? <input type="button" onclick="new_course()" value="Click Here" class="button btn btn-primary" name="btnSubmit"/> to add yours</p>';
+      $('#newest').html(v2).fadeIn(1000);
+    $('#newBtn').show();
+}
+
+
+
+function fetchCategories2() {
+
+    $('#ddlCategoriesView').html("<div class='col-md-12 col-sm-12' style='text-align:center'><img src='assets/img/loading2.gif' width='40' /></div>");
+    document.getElementById('div_find').style.display = "block";
+    var level = $("#ddlLevel").val();
+    $.post(baseURL + '/index.php/courses/fetchCategories2/' + level, {},
+            function(output) {
+                $('#ddlCategoriesView').html(output).fadeIn(1000);
+            });
+}
+
+function fetchCourses2() {
+    
+    $('#courseRow').html("<div class='col-md-12 col-sm-12' style='text-align:center'><img src='assets/img/loading2.gif' width='40' /></div>");
+    var cat = $("#ddlCategories").val();
+    $.post(baseURL + '/index.php/courses/fetchCourses2/' + cat, {},
+            function(output) {
+                $('#courseRow').html(output).slideDown(1000);
+            });
+}
+
+
+function centers()
+{
+    var center = $("#ddlCenter").val();
+    if (center != "")
+    {
+        if (center === "My House")
+        {
+            $('#shwCenter').html('Your House Address:<textarea class="form-control" name="txtHouse" rows="4" style="height:70px;"></textarea>');
+        }else if(center === "LNN Center")
+        {
+            $('#shwCenter').html('LearnNowNow Centers: <div class="styled-select"><select name="ddlLNNCenters" class="form-control"><option>Lagos Mainland </option><option>Lagos Island</option></select></div>');
+        } else {
+            $('#shwCenter').html('Online Type: <div class="styled-select"><select name="ddlOnline" class="form-control"><option>Live Class</option><option>Recorded Class</option></select></div>');
+        }
+    }
+}
+
+function centers2()
+{
+    var center = $("#ddlCenter").val();
+    if (center != "")
+    {
+        if(center === "LearnNowNow Center")
+        {
+            $('#shwCenter').html('LearnNowNow Centers: <div class="styled-select"><select name="ddlLNNCenters" id="ddlLNNCenters" onchange="showCenter2()" class="form-control"><option>Lagos Mainland </option><option>Lagos Island</option></select></div>');
+        } else if(center === "Online") {
+            $('#shwCenter').html('Online Type: <div class="styled-select"><select name="ddlOnline" id="ddlOnline" class="form-control" onchange="showCenter3()"><option>Live Classroom</option><option>Recorded Classroom</option></select></div>');
+        }
+    }
+}
+
+function payment()
+{
+    var center = $("#ddlPay").val();
+    if (center != "")
+    {
+        if (center === "Bank")
+        {
+            document.getElementById("online").style.display = "none";
+            document.getElementById("bank").style.display = "block";
+        }else if(center === "Online")
+        {
+            document.getElementById("bank").style.display = "none";
+            document.getElementById("online").style.display = "table-row";
+        }
+    }
+}
+
+function cal_payment(fee)
+{
+    var months = $("#ddlMonth").val();
+    var amount = fee * months;
+    $("#txtFee").val(amount);
+}
+
+function showCourse()
+{
+    var course = document.getElementById("ddlCourse").options[ddlCourse.selectedIndex].text;
+    var state = $("#hdState").val();
+    $('#shwCourse').html(course+" in "+state+" State");
+}
+
+function showCenter()
+{
+    var center = $("#ddlCenter").val();
+    if(center === "LearnNowNow Center")
+    {
+        $('#shwCenter2').html(" at "+center);
+        $('#shwCenter3').html(" (Lagos Mainland)");
+    }else if(center === "Online"){
+        $('#shwCenter2').html(" Via "+center+" Training");
+        $('#shwCenter3').html(" (Live Classroom) ");
+    }else{
+        $('#shwCenter2').html(" at "+center);
+        $('#shwCenter3').html("");
+    }
+    
+}
+
+function showCenter2()
+{
+    var center = $("#ddlLNNCenters").val();
+    $('#shwCenter3').html(" ("+center+")");
+}
+
+function showCenter3()
+{
+    var center = $("#ddlOnline").val();
+    $('#shwCenter3').html(" ("+center+")");
+}
+
+
+function showDuration()
+{
+    var dur = $("#txtDuration").val();
+    var dur2 = $("#ddlDuration").val();
+    $('#shwDuration').html(" for "+dur+" "+dur2);
+}
+
+function openNew()
+{
+    window.open("http://learnnownow.com", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=600, height=600");
+}
+
+
+$(document).ready(function(){
+    $("#register_div").hide();
+    $("#lnkRegEmail").click(function(){
+        $("#register_div").toggle();
+    });
+    
+});
