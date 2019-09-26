@@ -12,43 +12,35 @@
         android:layout_height="wrap_content"
         android:text="Profile"
         android:textSize="42sp"
+        android:textStyle="bold"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_marginStart="30dp"
         android:textColor="#2f80ed">
     </TextView>
     <EditText
         android:id="@+id/profileName"
-        android:layout_width="279dp"
+        android:layout_width="390dp"
         android:layout_height="59.24dp"
         android:layout_marginTop="49dp"
         android:hint="Name"
+        android:drawablePadding="16dp"
         android:layout_gravity="center_horizontal"
         android:paddingLeft="16dp"
         android:background="@drawable/edit_text_bg"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"/>
-    <EditText
-        android:id="@+id/profilePassword"
-        android:layout_width="279dp"
-        android:layout_height="59.24dp"
-        android:layout_marginTop="49dp"
-        android:hint="Password"
-        android:layout_gravity="center_horizontal"
-        android:paddingLeft="16dp"
-        android:background="@drawable/edit_text_bg"
-        android:layout_marginBottom="20dp"
-        android:inputType="textPersonName"/>
+
     <EditText
         android:id="@+id/profileEmail"
-        android:layout_width="279dp"
+        android:layout_width="390dp"
         android:layout_height="59.24dp"
-        android:layout_marginTop="49dp"
         android:hint="Email Address"
+        android:drawablePadding="16dp"
         android:layout_gravity="center_horizontal"
         android:paddingLeft="16dp"
         android:background="@drawable/edit_text_bg"
         android:layout_marginBottom="20dp"
-        android:inputType="textPersonName"/>
+        android:inputType="textEmailAddress"/>
 
 
 
