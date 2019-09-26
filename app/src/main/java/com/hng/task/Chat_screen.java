@@ -245,21 +245,19 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
 
-            case R.id.my_profile: {
+            case R.id.my_profile:
                 Intent intent = new Intent(Chat_screen.this, Profile.class);
                 startActivity(intent);
-            }
-
-            case R.id.log_out: {
+                return true;
+            case R.id.log_out:
                 if(mAuth.getCurrentUser() != null){
                     mAuth.signOut();
-                    Intent intent = new Intent(Chat_screen.this, Sign_in.class);
+                    Intent mine = new Intent(Chat_screen.this, Sign_in.class);
                     Toast.makeText(Chat_screen.this, "Signed out", Toast.LENGTH_LONG).show();
-                    startActivity(intent);
+                    startActivity(mine);
                     finish();
                 }
-            }
-
+                return true;
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
