@@ -27,8 +27,18 @@
         android:layout_gravity="center_horizontal"
         android:paddingLeft="16dp"
         android:background="@drawable/edit_text_bg"
-        android:layout_marginBottom="20dp"
         android:inputType="textPersonName"/>
+    <EditText
+        android:id="@+id/profileContact"
+        android:layout_width="390dp"
+        android:layout_height="59.24dp"
+        android:layout_marginTop="29dp"
+        android:hint="Contact"
+        android:drawablePadding="16dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="16dp"
+        android:background="@drawable/edit_text_bg"
+        android:inputType="phone"/>
 
     <EditText
         android:id="@+id/profileEmail"
@@ -38,8 +48,8 @@
         android:drawablePadding="16dp"
         android:layout_gravity="center_horizontal"
         android:paddingLeft="16dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_bg"
-        android:layout_marginBottom="20dp"
         android:inputType="textEmailAddress"/>
 
 
