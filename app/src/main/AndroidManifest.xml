@@ -11,18 +11,17 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Profile"
-            android:theme="@style/AppTheme.FullScreen"></activity>
+            android:theme="@style/AppTheme.FullScreen" />
         <activity
             android:name=".Chat_screen"
-            android:theme="@style/AppTheme.FullScreen">
-        </activity>
+            android:label="THYIA CHATBOT"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Sign_up"
-            android:theme="@style/AppTheme.FullScreen"/>
+            android:theme="@style/AppTheme.FullScreen" />
         <activity
             android:name=".Sign_in"
-            android:theme="@style/AppTheme.FullScreen">
-        </activity>
+            android:theme="@style/AppTheme.FullScreen"></activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.FullScreen">
