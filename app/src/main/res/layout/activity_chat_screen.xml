@@ -4,105 +4,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Chat_screen">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/blue_dark">
-
-            <ImageView
-                android:id="@+id/nav_icon"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/menu_icon"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="THYIA CHATBOT"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_centerInParent="true"/>
-
-        </RelativeLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/blue"
-            android:clipToPadding="false"
-            android:paddingTop="10dp"
-            android:paddingBottom="50dp"
-            tools:listitem="@layout/message_list"
-            android:layout_below="@+id/toolbar"
-            android:layout_above="@+id/chatLayout">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <RelativeLayout
-            android:id="@+id/chatLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/blue"
-            android:layout_alignParentBottom="true">
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/chat_input_background"
-                android:elevation="2dp">
-
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:background="#fff"
-                    android:layout_toStartOf="@+id/fab_img"
-                    android:hint="Type a Message"
-                    android:minHeight="50dp"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:id="@+id/fab_img"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/send"
-                    android:tint="@color/blue" />
-
-            </RelativeLayout>
-
-
-
-        </RelativeLayout>
-
-    </RelativeLayout>
+    <include
+        layout="@layout/app_bar_message_list"/>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:layout_gravity="start|left"
         android:background="@color/white"
         app:headerLayout="@layout/layout_nav_header"
