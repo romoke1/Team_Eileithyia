@@ -142,7 +142,7 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
                 if (!message.equals("")) {
                     ChatMessage userMessage = new ChatMessage(message, "user");
                     mChatMessages.add(userMessage);
-                    ref.child("chat").push().setValue(userMessage);
+                    ref.child("chat").child(mAuth.getCurrentUser().getUid()).push().setValue(userMessage);
 
                     aiRequest.setQuery(message);
                     new AsyncTask<AIRequest,Void,AIResponse>(){
@@ -165,7 +165,7 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
                                 String reply = result.getFulfillment().getSpeech();
                                 ChatMessage botMessage = new ChatMessage(reply, "chatbot");
                                 mChatMessages.add(botMessage);
-                                ref.child("chat").push().setValue(botMessage);
+                                ref.child("chat").child(mAuth.getCurrentUser().getUid()).push().setValue(botMessage);
                             }
                         }
                     }.execute(aiRequest);
@@ -174,8 +174,8 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
                     aiService.startListening();
                 }
                 int newMsgPosition = mChatMessages.size() - 1;
-                adapter.notifyDataSetChanged();
-                mRecyclerView.scrollToPosition(newMsgPosition);
+                /*adapter.notifyDataSetChanged();
+                mRecyclerView.scrollToPosition(getWindow().getAttributes().height);*/
                 txtMessage.setText("");
                 try  {
                     InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
@@ -187,7 +187,7 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
             }
         });
 
-        adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(ChatMessage.class,R.layout.message_list,chat_rec.class,ref.child("chat")) {
+        adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(ChatMessage.class,R.layout.message_list,chat_rec.class,ref.child("chat").child(mAuth.getCurrentUser().getUid())) {
             @Override
             protected void populateViewHolder(chat_rec viewHolder, ChatMessage model, int position) {
 
@@ -270,12 +270,12 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
 
         String message = responseResult.getResolvedQuery();
         ChatMessage chatMessage0 = new ChatMessage(message, "user");
-        ref.child("chat").push().setValue(chatMessage0);
+        ref.child("chat").child(mAuth.getCurrentUser().getUid()).push().setValue(chatMessage0);
 
 
         String reply = responseResult.getFulfillment().getSpeech();
         ChatMessage chatMessage = new ChatMessage(reply, "bot");
-        ref.child("chat").push().setValue(chatMessage);
+        ref.child("chat").child(mAuth.getCurrentUser().getUid()).push().setValue(chatMessage);
     }
 
     @Override
