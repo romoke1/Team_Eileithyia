@@ -6,53 +6,121 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Sign_in">
-
-    <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Profile"
-        android:textSize="42sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_marginStart="30dp"
         android:textColor="#2f80ed">
     </TextView>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/chatbot"
+        android:id="@+id/profilePicture"
+        app:civ_border_color="@color/ash"
+        app:civ_border_width="1dp">
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Photo"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="#2f80ed">
+    </TextView>
+
     <EditText
         android:id="@+id/profileName"
-        android:layout_width="390dp"
-        android:layout_height="59.24dp"
-        android:layout_marginTop="49dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
         android:hint="Name"
         android:drawablePadding="16dp"
         android:layout_gravity="center_horizontal"
-        android:paddingLeft="16dp"
-        android:background="@drawable/edit_text_bg"
+        android:maxLines="1"
+        android:padding="8dp"
         android:inputType="textPersonName"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Private Information"
+        android:gravity="center_horizontal"
+        android:padding="22dp"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#b2beb5">
+    </TextView>
+            <EditText
+        android:id="@+id/profileEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email address"
+                android:padding="8dp"
+
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="12dp"
+        android:layout_gravity="center_horizontal"
+        android:inputType="textEmailAddress" />
+
+
     <EditText
         android:id="@+id/profileContact"
-        android:layout_width="390dp"
-        android:layout_height="59.24dp"
-        android:layout_marginTop="29dp"
+        android:layout_width="match_parent"
+        android:ems="10"
+        android:layout_height="wrap_content"
         android:hint="Contact"
-        android:drawablePadding="16dp"
-        android:layout_gravity="center_horizontal"
-        android:paddingLeft="16dp"
-        android:background="@drawable/edit_text_bg"
-        android:inputType="phone"/>
-
-    <EditText
-        android:id="@+id/profileEmail"
-        android:layout_width="390dp"
-        android:layout_height="59.24dp"
-        android:hint="Email Address"
-        android:drawablePadding="16dp"
-        android:layout_gravity="center_horizontal"
-        android:paddingLeft="16dp"
+        android:padding="8dp"
+        android:drawablePadding="12dp"
+      android:drawableLeft="@drawable/phone_call"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edit_text_bg"
-        android:inputType="textEmailAddress"/>
+        android:inputType="phone"
+       />
+    <EditText
+        android:id="@+id/profilePassword"
+        android:layout_width="match_parent"
+        android:ems="10"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:drawablePadding="12dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp"
+        android:drawableLeft="@drawable/lock"
+        android:layout_marginTop="20dp"
+        android:inputType="numberPassword"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:padding="22dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#bec87f">
+    </TextView>
+        </LinearLayout>
 
-
+    </ScrollView>
 
 
 </LinearLayout>
