@@ -14,7 +14,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_above="@+id/chatLayout"
-        android:layout_below="@+id/toolbar"
         android:background="@color/blue"
         android:clipToPadding="false"
         android:paddingTop="10dp"
