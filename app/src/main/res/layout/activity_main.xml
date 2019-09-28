@@ -45,6 +45,16 @@
                 android:fontFamily="sans-serif"
                 android:text=" Smartest chatbot you can find\n out there with best AI features \n and cognitive abilities.  ">
             </TextView>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="45dp"
+                android:textColor="#ffffff"
+                android:text="Get Started"
+                android:background="@drawable/button_color"
+                android:layout_gravity="center_horizontal">
+
+            </Button>
 
         </LinearLayout>
 

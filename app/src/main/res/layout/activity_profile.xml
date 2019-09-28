@@ -25,8 +25,8 @@
         android:textColor="#00ac9e">
     </TextView>
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="258dp"
-        android:layout_height="258dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/thyia_bot"
         android:id="@+id/profilePicture"
@@ -60,7 +60,7 @@
         android:drawableLeft="@drawable/user"
         android:layout_gravity="center_horizontal"
         android:maxLines="1"
-        android:padding="18dp"
+        android:padding="12dp"
         android:inputType="textPersonName"/>
     <TextView
         android:layout_width="wrap_content"
@@ -82,6 +82,7 @@
                 android:background="#ffffff"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
 
         android:drawableLeft="@drawable/email"
         android:drawablePadding="12dp"
@@ -101,7 +102,7 @@
         android:layout_marginLeft="20dp"
         android:drawablePadding="12dp"
       android:drawableLeft="@drawable/phone_call"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:inputType="phone"
        />
     <EditText
@@ -117,7 +118,7 @@
         android:layout_gravity="center_horizontal"
         android:padding="8dp"
         android:drawableLeft="@drawable/lock"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:inputType="numberPassword"
         />
     <TextView
