@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#e8f1ff"
     tools:context=".Sign_in">
     <ScrollView
         android:layout_width="match_parent"
@@ -21,15 +22,15 @@
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_marginStart="30dp"
-        android:textColor="#2f80ed">
+        android:textColor="#00ac9e">
     </TextView>
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="258dp"
+        android:layout_height="258dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/chatbot"
+        android:src="@drawable/thyia_bot"
         android:id="@+id/profilePicture"
-        app:civ_border_color="@color/ash"
+        app:civ_border_color="#0e718b"
         app:civ_border_width="1dp">
     </de.hdodenhof.circleimageview.CircleImageView>
 
@@ -42,7 +43,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed-medium"
-        android:textColor="#2f80ed">
+        android:textColor="#00ac9e">
     </TextView>
 
     <EditText
@@ -50,12 +51,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:background="#ffffff"
         android:ems="10"
         android:hint="Name"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:drawablePadding="16dp"
+        android:drawableLeft="@drawable/user"
         android:layout_gravity="center_horizontal"
         android:maxLines="1"
-        android:padding="8dp"
+        android:padding="18dp"
         android:inputType="textPersonName"/>
     <TextView
         android:layout_width="wrap_content"
@@ -74,6 +79,9 @@
         android:ems="10"
         android:hint="Email address"
                 android:padding="8dp"
+                android:background="#ffffff"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
 
         android:drawableLeft="@drawable/email"
         android:drawablePadding="12dp"
@@ -88,6 +96,9 @@
         android:layout_height="wrap_content"
         android:hint="Contact"
         android:padding="8dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white"
+        android:layout_marginLeft="20dp"
         android:drawablePadding="12dp"
       android:drawableLeft="@drawable/phone_call"
         android:layout_marginTop="20dp"
@@ -97,6 +108,9 @@
         android:id="@+id/profilePassword"
         android:layout_width="match_parent"
         android:ems="10"
+        android:background="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:drawablePadding="12dp"
@@ -116,7 +130,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-black"
-        android:textColor="#bec87f">
+        android:textColor="#0e718b">
     </TextView>
         </LinearLayout>
 

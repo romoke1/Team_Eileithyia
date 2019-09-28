@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
+    android:background="#e8f1ff"
     android:layout_height="match_parent"
     tools:context=".Chat_screen">
 
@@ -56,7 +57,7 @@
             android:id="@+id/chatLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
+            android:background="#e8f1ff"
             android:layout_alignParentBottom="true">
 
 

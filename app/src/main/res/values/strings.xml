@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Thia Bot</string>
     <string name="sign_in"><u>Sign-in</u></string>
+    <string name="create_account">Create Account</string>
 </resources>
