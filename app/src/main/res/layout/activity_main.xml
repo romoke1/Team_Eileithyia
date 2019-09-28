@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#e8f1ff"
     tools:context=".MainActivity">
     <ScrollView
         android:layout_width="match_parent"
@@ -13,27 +14,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-        <ImageView
-            android:layout_width="219dp"
-            android:layout_height="200dp"
-            android:src="@drawable/chatbot"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="200dp"
-            >
-        </ImageView>
-        <TextView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="258dp"
+                android:layout_height="258dp"
+                android:layout_marginTop="56dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/together"
+                android:id="@+id/profilePicture"
+                app:civ_border_color="@color/ash"
+                app:civ_border_width="1dp">
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:layout_marginTop="130dp"
             android:layout_gravity="center_horizontal"
-            android:textColor="#2f80ed"
-            android:fontFamily="sans-serif-black"
-            android:shadowColor="#2f80ed"
-            android:shadowRadius="2"
-            android:text="    THYIA \n CHATBOT">
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-condensed-medium"
+                android:text=" Welcome to Thyia Bot  ">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif"
+                android:text=" Smartest chatbot you can find\n out there with best AI features \n and cognitive abilities.  ">
+            </TextView>
 
-        </TextView>
         </LinearLayout>
 
     </ScrollView>
