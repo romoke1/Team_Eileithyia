@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class Sign_in extends AppCompatActivity {
     private TextView signUpLink;
     private EditText mEmail;
     private EditText mPassword;
+    private ProgressBar mBar;
 
     //firebase variables
     private FirebaseAuth mAuth;
@@ -33,7 +35,6 @@ public class Sign_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
         //init firebase
         mAuth = FirebaseAuth.getInstance();
 
@@ -41,6 +42,9 @@ public class Sign_in extends AppCompatActivity {
         signUpLink = findViewById(R.id.sign_up);
         mEmail = findViewById(R.id.txt_username);
         mPassword = findViewById(R.id.txt_password);
+        mBar = findViewById(R.id.progressBar);
+
+        mBar.setVisibility(View.INVISIBLE);
 
         signUpLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,12 +65,14 @@ public class Sign_in extends AppCompatActivity {
             return;
         } else {
             //Register User
+            mBar.setVisibility(View.VISIBLE);
             mAuth.signInWithEmailAndPassword(mEmail.getText().toString(), mPassword.getText().toString())
                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
                             startActivity(new Intent(Sign_in.this,Chat_screen.class));
                             finish();
+                            mBar.setVisibility(View.INVISIBLE);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

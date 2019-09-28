@@ -20,6 +20,7 @@
         android:layout_gravity="start|left"
         android:background="@color/white"
         app:headerLayout="@layout/layout_nav_header"
-        app:menu="@menu/navigation_drawer_items" />
+        app:menu="@menu/navigation_drawer_items"
+        android:layout_marginTop="8dp"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
