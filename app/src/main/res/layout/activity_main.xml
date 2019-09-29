@@ -34,7 +34,7 @@
             android:layout_gravity="center_horizontal"
             android:textColor="#000000"
             android:fontFamily="sans-serif-condensed-medium"
-                android:text=" Welcome to Thyia Bot  ">
+                android:text=" Welcome to Thia Bot  ">
             </TextView>
             <TextView
                 android:layout_width="wrap_content"
