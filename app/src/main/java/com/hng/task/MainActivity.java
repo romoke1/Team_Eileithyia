@@ -1,26 +1,29 @@
 package com.hng.task;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button btnGetStarted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        btnGetStarted = findViewById(R.id.get_started);
+
+        btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
+            public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Sign_in.class);
                 startActivity(intent);
                 finish();
             }
-        }, 3*1000);
+        });
     }
 }
