@@ -172,7 +172,7 @@ public class Profile extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(Profile.this, "Unable to Get Profile Image", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Profile.this, "Please Set Your Profile Image from the profile section", Toast.LENGTH_LONG).show();
                 }
             });
         } catch (IOException e) {
