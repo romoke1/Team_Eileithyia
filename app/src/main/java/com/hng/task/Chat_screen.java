@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -32,9 +36,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.hng.task.models.ChatMessage;
 import com.hng.task.models.User;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,12 +72,14 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
     private EditText txtMessage;
     private ImageView sendMessage;
     private TextView name;
+    private ImageView profilePicture;
 
     //utilities
     private ChatRecyclerViewAdapter mChatRecyclerViewAdapter;
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
     private List<ChatMessage> mChatMessages;
+    private String g;
 
 
     DatabaseReference ref;
@@ -84,7 +95,7 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
         //init firebase
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        String g = mAuth.getCurrentUser().getUid();
+        g = mAuth.getCurrentUser().getUid();
         Log.d(TAG, "onCreate: " + g);
         users = mFirebaseDatabase.getReference("users").child(g);
 
@@ -98,6 +109,7 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
         View headerView = navigationView.getHeaderView(0);
         mBack = headerView.findViewById(R.id.hide_sidebar);
         name = headerView.findViewById(R.id.header_title);
+        profilePicture = headerView.findViewById(R.id.header_icon);
         mDrawerLayout = findViewById(R.id.drawer_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -188,9 +200,11 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
                 else {
                     aiService.startListening();
                 }
-                int newMsgPosition = mChatMessages.size() - 1;
-                /*adapter.notifyDataSetChanged();
-                mRecyclerView.scrollToPosition(getWindow().getAttributes().height);*/
+//                int newMsgPosition = mChatMessages.size() - 1;
+//                adapter.notifyDataSetChanged();
+//                mRecyclerView.smoothScrollToPosition(newMsgPosition);
+
+                mRecyclerView.getLayoutManager().smoothScrollToPosition(mRecyclerView,new RecyclerView.State(), mRecyclerView.getAdapter().getItemCount());
                 txtMessage.setText("");
                 try  {
                     InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
@@ -337,6 +351,25 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
 
             }
         });
+
+        StorageReference ref = FirebaseStorage.getInstance().getReference().child(g + "/image");
+
+        try {
+            final File localFile = File.createTempFile("pic", "jpg");
+            ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                    profilePicture.setImageURI(Uri.fromFile(localFile));
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(Chat_screen.this, "Please Set Your Profile Image from the profile section", Toast.LENGTH_LONG).show();
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
