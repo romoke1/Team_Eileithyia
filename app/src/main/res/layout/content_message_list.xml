@@ -63,7 +63,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="10dp"
                     android:src="@drawable/send"
-                    android:tint="@color/blue" />
+                    android:tint="@color/colorPrimary" />
 
             </RelativeLayout>
 
