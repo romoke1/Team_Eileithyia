@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:background="#e8f1ff"
     tools:context=".MainActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -45,7 +46,9 @@
                 android:fontFamily="sans-serif"
                 android:text=" Smartest chatbot you can find\n out there with best AI features \n and cognitive abilities.  ">
             </TextView>
+
             <Button
+                android:id="@+id/get_started"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginTop="45dp"

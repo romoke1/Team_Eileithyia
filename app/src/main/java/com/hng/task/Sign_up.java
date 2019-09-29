@@ -96,7 +96,7 @@ public class Sign_up extends AppCompatActivity {
                             user.setPhone(mPhone.getText().toString());
 
                             //use phone as key
-                            users.child(mPhone.getText().toString())
+                            users.child(mAuth.getCurrentUser().getUid())
                                     .setValue(user)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
