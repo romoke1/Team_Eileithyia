@@ -34,6 +34,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'com.google.firebase:firebase-auth:19.0.0'
     implementation 'com.google.firebase:firebase-database:19.1.0'
+    implementation 'com.google.firebase:firebase-storage:19.0.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -43,7 +45,7 @@ dependencies {
 
     implementation 'com.firebaseui:firebase-ui-database:2.3.0'
     implementation 'ai.api:sdk:2.0.7@aar'
-    implementation ('ai.api:libai:1.4.8'){
+    implementation('ai.api:libai:1.4.8') {
         exclude module: 'log4j-core'
     }
     implementation 'com.google.code.gson:gson:2.8.5'
