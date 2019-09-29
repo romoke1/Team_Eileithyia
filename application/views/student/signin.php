@@ -21,7 +21,7 @@
 
 
                     <div class="form-group">
-                        <button type="submit" name="" class="btn btn-primary form-control"> Login </button>
+                        <button type="submit" name="" class="btn btn-dark form-control"> Login </button>
                     </div>
 
                     <div class="form-group text-light">
@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="form-group text-center text-light">
-                        <span style="font-size: 1.2em">Need an account? <span> <a href="<?= base_url() ?>student/signup">Signup Here</a>
+                        <span style="font-size: 1.2em">Need an account? <span> <a href="<?= base_url() ?>student/signup" style="color: #fff;">Signup Here</a>
                     </div>
                 <?= form_close()?>
 

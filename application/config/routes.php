@@ -55,11 +55,21 @@ $route['teacher/signup'] = 'app/teacher_signup';
 $route['teacher/signin'] = 'app/teacher_signin';
 $route['teacher_dashboard'] = 'app/teacher_dashboard';
 $route['teacher_logout'] = 'app/teacher_logout';
+$route['add_class'] = 'app/add_class';
+$route['add_item'] = 'app/add_item';
+$route['items'] = 'app/all_items';
+$route['items/(:any)'] = 'app/all_items/$1';
+$route['all_student'] = 'app/all_student';
 
 $route['student/signup'] = 'app/student_signup';
 $route['student/signin'] = 'app/student_signin';
 $route['student_dashboard'] = 'app/student_dashboard';
 $route['student_logout'] = 'app/student_logout';
+$route['item_details/(:any)/(:num)'] = 'app/item_details/$1/$2';
+
+$route['edit_class/(:any)'] = 'app/edit_class/$1';
+$route['download_file/(:any)'] = 'app/download/$1';
+$route['about_us'] = 'app/about';
 
 //Routes for admin
 

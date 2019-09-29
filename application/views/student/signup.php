@@ -29,16 +29,17 @@
                         </select>
                     </div>
                 
-                    <div class="form-group">
-                        <input type="password" name="txtPassword" placeholder="Password" class="form-control" required="">
+                    <div class="form-group" id="txtPassDiv">
+                        <input type="password" id="txtPass" name="txtPassword" placeholder="Password" class="form-control" required="">
                     </div>
                 
-                    <div class="form-group">
-                        <input type="password" name="txtPassword2" placeholder="Confirm Password" class="form-control" required="">
+                    <div class="form-group" id="txtPassDiv2">
+                        <input type="password" id="txtPass2" name="txtPassword2" placeholder="Confirm Password" class="form-control" required="">
+                        <label id="message" class="control-label" for="inputSuccess1" style="font-size: 12px; display: none;"></label>
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" name="" class="btn btn-primary form-control"> Signup </button>
+                        <button type="submit" name="" class="btn btn-dark form-control"> Signup </button>
                     </div>
 
                     <div class="form-group text-light">

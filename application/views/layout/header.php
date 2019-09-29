@@ -5,7 +5,7 @@
         <style type="text/css">
 
             .top-menu{
-                background-color: rgb(21,17,92);
+                /*background-color: rgb(21,17,92);*/
                 font-family: 'Lato', sans-serif;
 
 
@@ -62,7 +62,6 @@
             }
 
             .footer{
-
                 border-top: 2px solid white;
                 color: white;
             }
@@ -75,16 +74,18 @@
 
             section {
 
+                background: #006494;
+                height: 100%;
 
-                background:  linear-gradient(blue,purple);
-                /* Fallback for browsers that don't support gradients */
+/*                background:  linear-gradient(blue,purple);
+                 Fallback for browsers that don't support gradients 
                 background: blue;
-                /* For Safari 5.1 to 6.0 */
+                 For Safari 5.1 to 6.0 
                 background: -webkit-linear-gradient(blue, purple);
-                /* For Internet Explorer 10 */
+                 For Internet Explorer 10 
                 background: -ms-linear-gradient(blue, purple);
-                /* Standard syntax */
-                background: linear-gradient(blue, purple);
+                 Standard syntax 
+                background: linear-gradient(blue, purple);*/
 
             }
 
@@ -138,24 +139,24 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top-menu">
 
                     <nav class="navbar navbar-expand-lg navbar-light text-white">
-                        <a class="navbar-brand" href="<?= base_url() ?>" style="color: white;"><i class="fa fa-graduation-cap" style="font-size:30px; color: white;"></i><b>Thyia E-Learning Classroom</b></a>
+                        <a class="navbar-brand" href="<?= base_url() ?>" style="color: black;"><i class="fa fa-graduation-cap" style="font-size:30px; color: black;"></i><b>Thyia E-Learning Classroom</b></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarText">
                             <ul class="navbar-nav ml-auto">
                                   <li class="nav-item active">
-                                    <a class="nav-link" href="<?= base_url() ?>student/signup">Become a Student <span class="sr-only">(current)</span></a>
+                                      <a class="nav-link" href="<?= base_url() ?>student/signup" style="color: black; font-weight: bold;">Student Enroll<span class="sr-only">(current)</span></a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url() ?>teacher/signup">Become a Teacher</a>
+                                    <a class="nav-link" href="<?= base_url() ?>teacher/signup" style="color: black; font-weight: bold;">Become a Teacher</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url() ?>teacher/signin">Teacher Sign In</a>
+                                    <a class="nav-link" href="<?= base_url() ?>teacher/signin" style="color: black; font-weight: bold;">Login as Teacher</a>
                                   </li>
 
                                   <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url() ?>student/signin">Student Sign In</a>
+                                    <a class="nav-link" href="<?= base_url() ?>student/signin" style="color: black; font-weight: bold;">Login as Student</a>
                                   </li>
 
                             </ul>

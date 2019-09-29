@@ -20,7 +20,7 @@
                     across all platforms and give you <br>
                     exercises to test yourself.
                 </p>
-                <a href="#"><button>Learn More</button></a>
+                <a href="<?= base_url() ?>about_us"><button>Learn More</button></a>
 
             </div>
 

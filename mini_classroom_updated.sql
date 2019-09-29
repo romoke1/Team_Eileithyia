@@ -19,18 +19,34 @@ USE `mini_classroom`;
 -- Dumping structure for table mini_classroom.class
 CREATE TABLE IF NOT EXISTS `class` (
   `class_id` int(11) NOT NULL AUTO_INCREMENT,
+  `teacher_id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `description` text NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`class_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table mini_classroom.class: 2 rows
+-- Dumping data for table mini_classroom.class: 1 rows
 /*!40000 ALTER TABLE `class` DISABLE KEYS */;
-INSERT IGNORE INTO `class` (`class_id`, `name`, `description`, `date_added`) VALUES
-	(1, 'Back-End Class', 'Back-end is ..........', '2019-09-25 23:18:54'),
-	(2, 'Front-End Class', 'Front-End is..........', '2019-09-25 23:19:23');
+INSERT IGNORE INTO `class` (`class_id`, `teacher_id`, `name`, `description`, `date_added`) VALUES
+	(1, 1, 'UI/UX Designer', 'Design Pattern', '2019-09-29 01:43:25');
 /*!40000 ALTER TABLE `class` ENABLE KEYS */;
+
+-- Dumping structure for table mini_classroom.items
+CREATE TABLE IF NOT EXISTS `items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `class_id` int(11) NOT NULL,
+  `teacher_id` int(11) NOT NULL,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `file` text NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Dumping data for table mini_classroom.items: 0 rows
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
 -- Dumping structure for table mini_classroom.student
 CREATE TABLE IF NOT EXISTS `student` (
