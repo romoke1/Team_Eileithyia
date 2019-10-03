@@ -32,7 +32,8 @@
         <h4 style="margin-left: 10px;"><i class="fa fa-graduation-cap fa-2x"></i>&nbsp;Thyia E - Learning Classroom</h4>
     </div>
     <div class="profile-sm">
-        <img src="<?= base_url()?>assets/images/avatar_sm.png" class="avatar-sm">
+        <!--<img src="<?= base_url()?>assets/images/avatar_sm.png" class="avatar-sm">-->
+        <i class="fa fa-user fa-2x"></i>&nbsp;&nbsp;
         <!--<img src="<?= base_url()?>assets/images/arrow_dwn.svg">-->
         <a href="" style="margin-right: 20px; color: black; font-weight: bold;" >Welcome, <?= $student["fullname"]?></a>
     </div>
@@ -49,6 +50,7 @@
         <hr style="border-color: #fff;">
       <div class="profile-lg">
           <div class="list-item"><a href="<?= base_url()?>student_dashboard" style="color: #fff;"><i class="fa fa-home" style="font-size: 22px;"></i>&nbsp;&nbsp;Dashboard</a></div>
+          <div class="list-item"><a href="<?= base_url()?>student/edit_profile" style="color: #fff;"><i class="fa fa-edit" style="font-size: 22px;"></i>&nbsp;&nbsp;Edit Profile</a></div>
           <div class="list-item"><a href="<?= base_url()?>student_logout" style="color: #fff;"><i class="fa fa-sign-out" style="font-size: 22px;"></i>&nbsp;&nbsp;Logout</a></div>
       </div>
       <hr>

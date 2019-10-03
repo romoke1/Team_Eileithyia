@@ -1,6 +1,6 @@
 <div class="sm-grid">
       <div class="class-list">
-          <h2 style="font-size: 20px;">Edit Class (<?= $class_del["name"]?>)</h2>
+          <h2 style="font-size: 20px; font-weight: bold;">Edit Class (<?= $class_del["name"]?>)</h2>
         <hr>
         <?= $status  ?>
         <?= form_open() ?>

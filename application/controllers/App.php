@@ -252,6 +252,85 @@ class App extends CI_Controller {
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
+    public function teacher_edit_profile(){
+        $this->teacher_init();
+        $data["status"] = "";
+        $data["teacher"] = $this->model_getvalues->getDetails("teachers", "email", $this->session->userdata('teacher_email'));
+//        $data["class_del"] = $this->model_getvalues->getDetails("class", "class_id", $id);
+        $data["title"] = $data["teacher"]["fullname"]." | Teacher Dashboard";
+
+        $this->form_validation->set_rules('txtFname', 'Teacher Fullname', 'required|trim');
+        $this->form_validation->set_rules('txtEmail', 'Teacher Email', 'required|trim');
+        
+        if ($this->form_validation->run() == TRUE) {
+//            echo "<script>alert('okay')</script>";
+
+            $array = array(
+                'fullname' => $this->input->post('txtFname'),
+                'email' => $this->input->post('txtEmail')
+            );
+            
+            $this->load->model('model_updatevalues');
+            $confirm = $this->model_updatevalues->updateVal('teachers', $array, "id", $data["teacher"]["id"]);
+
+            //--------------- Confirm if values has been upadated ---//
+            if ($confirm) {
+
+                $data["status"] = $this->model_htmldata->successMsg2("Profile Updated Successfully.");
+
+                //------- After the success message has show, redirect to Techer Dashboard ----------//
+                header('Refresh: 2; url=' . base_url() . 'teacher/edit_profile');
+            } else {
+
+                $data["status"] = $this->model_htmldata->errorMsg2("An error occured, please try again");
+            }
+        }else{
+            if(validation_errors()){
+            $error = validation_errors();
+            $data["status"] = $this->model_htmldata->errorMsg2(str_replace(array("\r", "\n"), '\n', strip_tags(validation_errors())));
+            }
+        }
+        
+        $this->load->view('teacher/header', $data);
+        $this->load->view('teacher/edit_profile', $data);
+        $this->load->view('teacher/footer', $data);
+    }
+//------------------------------------------------------------------------------
+       
+    public function teacher_change_password() {
+        $this->teacher_init();
+        $data["status"] = "";
+        $data["teacher"] = $this->model_getvalues->getDetails("teachers", "email", $this->session->userdata('teacher_email'));
+//        $data["class_del"] = $this->model_getvalues->getDetails("class", "class_id", $id);
+        $data["title"] = $data["teacher"]["fullname"]." | Teacher Dashboard";
+        $this->form_validation->set_rules('txtOldPass', 'Old Password', 'required');
+        $this->form_validation->set_rules('txtNewPass', 'New Password', 'required');
+        $this->form_validation->set_rules('txtNewPass2', 'Confirm New Password', 'required|trim|matches[txtNewPass]');
+        $password = md5($this->input->post('txtOldPass'));
+
+        if ($this->form_validation->run()) {
+            if ($this->model_getvalues->getDetails("teachers", "password", $password)) {
+                if ($this->model_updatevalues->updatePassword($this->session->userdata("teacher_email"))) {
+
+                    $data["status"] = $this->model_htmldata->successMsg2("You succesfully updated your password.");
+                    header('Refresh: 2; url=' . base_url() . 'teacher/edit_profile');
+                }
+            } else {
+                $data["status"] = $this->model_htmldata->errorMsg2("Your Old Password is incorrect");
+            }
+        }else{
+            if(validation_errors()){
+            $error = validation_errors();
+            $data["status"] = $this->model_htmldata->errorMsg2(str_replace(array("\r", "\n"), '\n', strip_tags(validation_errors())));
+            }
+        }
+        
+        $this->load->view('teacher/header', $data);
+        $this->load->view('teacher/edit_profile', $data);
+        $this->load->view('teacher/footer', $data);
+    }
+
+//------------------------------------------------------------------------------
      public function delete_item($x) {
         $this->load->model("model_deletevalues");
         $data = array("id" => $x);
@@ -533,6 +612,86 @@ class App extends CI_Controller {
         redirect(base_url()."student/signin");
     }
 //------------------------------------------------------------------------------
+
+    
+//------------------------------------------------------------------------------
+    public function student_edit_profile(){
+        $this->student_init();
+        $data["status"] = "";
+        $data["student"] = $this->model_getvalues->getDetails("student", "email", $this->session->userdata('student_email'));
+        $data["title"] = $data["student"]["fullname"]." | Student Dashboard";
+
+        $this->form_validation->set_rules('txtFname', 'Student Fullname', 'required|trim');
+        $this->form_validation->set_rules('txtEmail', 'Student Email', 'required|trim');
+        
+        if ($this->form_validation->run() == TRUE) {
+//            echo "<script>alert('okay')</script>";
+
+            $array = array(
+                'fullname' => $this->input->post('txtFname'),
+                'email' => $this->input->post('txtEmail')
+            );
+            
+            $this->load->model('model_updatevalues');
+            $confirm = $this->model_updatevalues->updateVal('student', $array, "id", $data["student"]["id"]);
+
+            //--------------- Confirm if values has been upadated ---//
+            if ($confirm) {
+
+                $data["status"] = $this->model_htmldata->successMsg2("Profile Updated Successfully.");
+
+                //------- After the success message has show, redirect to Techer Dashboard ----------//
+                header('Refresh: 2; url=' . base_url() . 'student/edit_profile');
+            } else {
+
+                $data["status"] = $this->model_htmldata->errorMsg2("An error occured, please try again");
+            }
+        }else{
+            if(validation_errors()){
+            $error = validation_errors();
+            $data["status"] = $this->model_htmldata->errorMsg2(str_replace(array("\r", "\n"), '\n', strip_tags(validation_errors())));
+            }
+        }
+        
+        $this->load->view('student/header', $data);
+        $this->load->view('student/edit_profile', $data);
+        $this->load->view('student/footer', $data);
+    }
+//------------------------------------------------------------------------------
+       
+    public function student_change_password() {
+        $this->student_init();
+        $data["status"] = "";
+        $data["student"] = $this->model_getvalues->getDetails("student", "email", $this->session->userdata('student_email'));
+        $data["class"] = $this->model_getvalues->getDetails("class", "class_id", $data["student"]["class_id"]);
+        $data["title"] = $data["student"]["fullname"]." | Student Dashboard";
+        
+        $this->form_validation->set_rules('txtOldPass', 'Old Password', 'required');
+        $this->form_validation->set_rules('txtNewPass', 'New Password', 'required');
+        $this->form_validation->set_rules('txtNewPass2', 'Confirm New Password', 'required|trim|matches[txtNewPass]');
+        $password = md5($this->input->post('txtOldPass'));
+
+        if ($this->form_validation->run()) {
+            if ($this->model_getvalues->getDetails("student", "password", $password)) {
+                if ($this->model_updatevalues->updatePassword2($this->session->userdata("student_email"))) {
+
+                    $data["status"] = $this->model_htmldata->successMsg2("You succesfully updated your password.");
+                    header('Refresh: 2; url=' . base_url() . 'student/edit_profile');
+                }
+            } else {
+                $data["status"] = $this->model_htmldata->errorMsg2("Your Old Password is incorrect");
+            }
+        }else{
+            if(validation_errors()){
+            $error = validation_errors();
+            $data["status"] = $this->model_htmldata->errorMsg2(str_replace(array("\r", "\n"), '\n', strip_tags(validation_errors())));
+            }
+        }
+        
+        $this->load->view('student/header', $data);
+        $this->load->view('student/edit_profile', $data);
+        $this->load->view('student/footer', $data);
+    }
 
 
 //------------------------------------------------------------------------------

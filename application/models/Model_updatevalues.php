@@ -6,26 +6,40 @@
 	 * 
 	 * @package   
 	 * @author hrapp
-	 * @copyright Ayodeji Adesola
-	 * @version 2014
+	 * @copyright Amah Gift
+	 * @version 2019
 	 * @access public
 	 */
 	class Model_updateValues extends CI_Model{
 		
 	
-        function updatePassword($id)
-		{
-			$data = array(
-				"passwd"=>$this->input->post('txtNewPass')
-			);
-			
-			if($this->db->update("details", $data, "email = '".$id."'"))
-			{
-				return true;
-			}else{
-				return false;
-			}
-		}
+        function updatePassword($email)
+        {
+                $data = array(
+                        "password"=>md5($this->input->post('txtNewPass'))
+                );
+
+                if($this->db->update("teachers", $data, "email = '".$email."'"))
+                {
+                        return true;
+                }else{
+                        return false;
+                }
+        }
+	
+        function updatePassword2($email)
+        {
+                $data = array(
+                        "password"=> md5($this->input->post('txtNewPass'))
+                );
+
+                if($this->db->update("student", $data, "email = '".$email."'"))
+                {
+                        return true;
+                }else{
+                        return false;
+                }
+        }
 		
 	
         function updateVal($table, $array, $where, $id)

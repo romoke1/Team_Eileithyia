@@ -49,6 +49,7 @@
         <hr style="border-color: #fff;">
       <div class="profile-lg">
           <div class="list-item"><a href="<?= base_url()?>teacher_dashboard" style="color: #fff;"><i class="fa fa-home" style="font-size: 22px;"></i>&nbsp;&nbsp;Dashboard</a></div>
+          <div class="list-item"><a href="<?= base_url()?>teacher/edit_profile" style="color: #fff;"><i class="fa fa-edit" style="font-size: 22px;"></i>&nbsp;&nbsp;Edit Profile</a></div>
           <div class="list-item"><a href="<?= base_url()?>add_class" style="color: #fff;"><i class="fa fa-graduation-cap" style="font-size: 22px;"></i>&nbsp;&nbsp;Add Class</a></div>
           <div class="list-item"><a href="<?= base_url()?>items" style="color: #fff;"><i class="fa fa-file" style="font-size: 22px;"></i>&nbsp;&nbsp;All Items</a></div>
           <div class="list-item"><a href="<?= base_url()?>all_student" style="color: #fff;"><i class="fa fa-users" style="font-size: 22px;"></i>&nbsp;&nbsp;My Students</a></div>
